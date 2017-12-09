@@ -1,0 +1,46 @@
+{
+	"name": "sasin91/laravel-feature-toggle",
+    "description": "Config driven feature toggle for Laravel.",
+    "keywords": ["laravel", "feature", "config"],
+    "license": "MIT",
+    "type": "package",
+
+    "minimum-stability": "dev",
+
+    "require": {
+        "illuminate/support": "^5.5"
+    },
+
+    "require-dev": {
+		"orchestra/testbench": "^3.4",
+		"phpunit/phpunit": "^6.1"
+	},
+
+    "autoload": {
+        "psr-4": {
+            "Sasin91\\LaravelFeatureToggle\\": "src/",
+            "Sasin91\\LaravelFeatureToggle\\Tests\\": "tests/"
+        }
+    },
+
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    },
+
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+
+	"extra": {
+		"laravel": {
+	    	"providers": [
+	        	"Sasin91\\LaravelFeatureToggle\\FeatureToggleServiceProvider"
+	      	],
+	      	"aliases": {
+	      		"Feature": "Sasin91\\LaravelFeatureToggle\\Feature"
+	      	}
+	    }
+	}
+}
