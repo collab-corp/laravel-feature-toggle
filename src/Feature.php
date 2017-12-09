@@ -1,6 +1,6 @@
 <?php
 
-namespace Sasin91\LaravelFeatureToggle;
+namespace CollabCorp\LaravelFeatureToggle;
 
 use Illuminate\Support\Facades\Blade;
 
@@ -48,7 +48,7 @@ class Feature
     public static function registerJavaScriptBladeDirective()
     {
         Blade::directive('features', function () {
-            return "<?php echo \Sasin91\LaravelFeatureToggle\Feature::javaScriptFunction() ?>";
+            return "<?php echo \CollabCorp\LaravelFeatureToggle\Feature::javaScriptFunction() ?>";
         });
     }
 

@@ -1,5 +1,5 @@
 {
-	"name": "sasin91/laravel-feature-toggle",
+	"name": "collab-corp/laravel-feature-toggle",
     "description": "Config driven feature toggle for Laravel.",
     "keywords": ["laravel", "feature", "config"],
     "license": "MIT",
@@ -18,8 +18,8 @@
 
     "autoload": {
         "psr-4": {
-            "Sasin91\\LaravelFeatureToggle\\": "src/",
-            "Sasin91\\LaravelFeatureToggle\\Tests\\": "tests/"
+            "CollabCorp\\LaravelFeatureToggle\\": "src/",
+            "CollabCorp\\LaravelFeatureToggle\\Tests\\": "tests/"
         }
     },
 
@@ -36,10 +36,10 @@
 	"extra": {
 		"laravel": {
 	    	"providers": [
-	        	"Sasin91\\LaravelFeatureToggle\\FeatureToggleServiceProvider"
+	        	"CollabCorp\\LaravelFeatureToggle\\FeatureToggleServiceProvider"
 	      	],
 	      	"aliases": {
-	      		"Feature": "Sasin91\\LaravelFeatureToggle\\Feature"
+	      		"Feature": "CollabCorp\\LaravelFeatureToggle\\Feature"
 	      	}
 	    }
 	}

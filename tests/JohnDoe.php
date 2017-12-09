@@ -1,6 +1,6 @@
 <?php
 
-namespace Sasin91\LaravelFeatureToggle\Tests;
+namespace CollabCorp\LaravelFeatureToggle\Tests;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;

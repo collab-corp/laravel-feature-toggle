@@ -17,7 +17,7 @@
 
 ## For Laravel ~5
 
-    composer require sasin91/laravel-feature-toggle
+    composer require collab-corp/laravel-feature-toggle
 
 As with any package, it's a good idea to refresh composer autoloader.
 ```bash
@@ -31,7 +31,7 @@ composer dump-autoload
 To publish `features.php` config file, run the following, `vendor:publish` command.
 
 ```bash
-php artisan vendor:publish --provider="\Sasin91\LaravelFeatureToggle\FeatureToggleServiceProvider"
+php artisan vendor:publish --provider="\CollabCorp\LaravelFeatureToggle\FeatureToggleServiceProvider"
 ```
 
 You may then configure your config to your liking, it is possible to use callbacks or callables strings as values.

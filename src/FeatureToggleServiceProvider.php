@@ -1,6 +1,6 @@
 <?php
 
-namespace Sasin91\LaravelFeatureToggle;
+namespace CollabCorp\LaravelFeatureToggle;
 
 use Illuminate\Support\ServiceProvider;
 

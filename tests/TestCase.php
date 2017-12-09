@@ -1,9 +1,9 @@
 <?php
 
-namespace Sasin91\LaravelFeatureToggle\Tests;
+namespace CollabCorp\LaravelFeatureToggle\Tests;
 
 use Orchestra\Testbench\TestCase as TestbenchTestCase;
-use Sasin91\LaravelFeatureToggle\FeatureToggleServiceProvider;
+use CollabCorp\LaravelFeatureToggle\FeatureToggleServiceProvider;
 
 abstract class TestCase extends TestbenchTestCase
 {

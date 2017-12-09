@@ -1,9 +1,9 @@
 <?php
 
-namespace Sasin91\LaravelFeatureToggle\Tests;
+namespace CollabCorp\LaravelFeatureToggle\Tests;
 
 use PHPUnit\Framework\Assert as PHPUnit;
-use Sasin91\LaravelFeatureToggle\Feature;
+use CollabCorp\LaravelFeatureToggle\Feature;
 
 class FeatureToggleTest extends TestCase
 {
