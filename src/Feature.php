@@ -70,6 +70,8 @@ class Feature
             features[value],
         ).toLowerCase() === 'true'
     }
+
+    window.feature = feature;
 </script>
 EOT;
     }

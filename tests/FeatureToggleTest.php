@@ -98,4 +98,28 @@ class FeatureToggleTest extends TestCase
 
         $this->assertTrue(Feature::isEnabled('test'));
     }
+
+    /** @test */
+    public function it_generates_a_javaScript_functions() 
+    {
+        $this->app['config']->set('features.test', function () {
+            return false;
+        });
+
+        $expected = <<<EOT
+<script type="text/javascript">
+    var features = {"test":false}
+            
+    var feature = function (value) {
+        return String(
+            features[value],
+        ).toLowerCase() === 'true'
+    }
+
+    window.feature = feature;
+</script>
+EOT;
+
+        $this->assertEquals($expected, Feature::javaScriptFunction());
+    } 
 }
