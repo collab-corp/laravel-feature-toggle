@@ -6,6 +6,7 @@
 - [Configuration](#configuration)
     - [Binding callbacks](#binding_callbacks)
 - [Usage](#usage)
+    - [JavaScript] (#javascript)
 - [Testing](#testing)
 - [Events](#events)
 - [Issues](#issues)
@@ -73,6 +74,14 @@ In your application code you can simply call
  Feature::isEnabled('name');
  Feature::isDisabled('name');
 ```
+
+<a name="javascript" />
+
+### Evaluating features in JavaScript
+
+To evaluate a feature toggle in your frontend, simply add ``` @features ``` to your blade file. Likely in your header.
+
+This will add a ``` bool feature(value) ``` helper to your window.
 
 <a name="testing" />
 ## Testing
