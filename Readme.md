@@ -6,7 +6,7 @@
 - [Configuration](#configuration)
     - [Binding callbacks](#binding_callbacks)
 - [Usage](#usage)
-    - [JavaScript] (#javascript)
+    - [JavaScript](#javascript)
 - [Testing](#testing)
 - [Events](#events)
 - [Issues](#issues)
