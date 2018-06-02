@@ -14,7 +14,7 @@ class FeatureToggleServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/config/features.php' => config_path('features.php'),
+            __DIR__.'/../config/features.php' => config_path('features.php'),
         ]);
     }
     /**
