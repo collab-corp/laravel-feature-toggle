@@ -123,7 +123,7 @@ EOT;
      */
     public static function all()
     {
-        return array_dot(config('features'));
+        return array_dot(config('features') ?? []);
     }
 
     /**
