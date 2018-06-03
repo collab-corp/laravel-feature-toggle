@@ -51,6 +51,26 @@ Feature::bind('evaluation', function ($user, ...$dependencies) {
 });
 ```
 
+In addition to letting laravel inject dependencies through the container,
+it is also possible to specify values in a comma seperated list.
+
+In your config...
+```php 
+// config/features.php
+<?php return [
+	// ...
+	'my_feature' => 'env:local,development'
+];
+```
+
+In your service provider...
+```php
+Feature::bind('env', function ($user, array $enviroments) {
+	return app()->enviroment($enviroments);
+});
+```
+
+
 **And you are ready to go.**
 
 <a name="usage" />
