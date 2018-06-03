@@ -3,6 +3,7 @@
 namespace CollabCorp\LaravelFeatureToggle;
 
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Str;
 
 class Feature
 {
@@ -134,16 +135,38 @@ EOT;
      *
      * @return boolean
      */
-    private static function evaluate($value, $user)
+    protected static function evaluate($value, $user = null)
     {
+        $parameters = ['user' => $user ?? auth()->user()];
+
         if (is_bool($value)) {
             return $value;
         }
 
-        if (is_string($value) && array_key_exists($value, static::$evaluations)) {
-            $value = static::$evaluations[$value];
+        if (is_string($value)) {
+            if (Str::contains($value, ':')) {
+                list($value, $parameters) = static::expandParameterizedBinding($value, $parameters);
+            }
+
+            $value = array_get(static::$evaluations, $value, $value);
         }
-        
-        return (bool)app()->call($value, ['user' => $user ?? auth()->user()]);
+
+        return (bool)app()->call($value, $parameters);
+    }
+
+    /**
+     * Expand a parameterized binding
+     *     
+     * @param string $value 
+     * @param array $parameters 
+     * 
+     * @return array        
+     */
+    private static function expandParameterizedBinding($value, $parameters = [])
+    {
+        $keys = explode(':', $value, 2);
+        $csvParams = array_map('trim', explode(',', $keys[1]));
+
+        return [$keys[0], array_merge($parameters, [$csvParams])];
     }
 }

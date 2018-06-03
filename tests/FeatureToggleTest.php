@@ -8,6 +8,22 @@ use CollabCorp\LaravelFeatureToggle\Feature;
 class FeatureToggleTest extends TestCase
 {
     /** @test */
+    function it_passes_comma_separated_values_after_a_collon_as_parameters() 
+    {
+        config([
+            'features' => [
+                'my_feature' => 'env:local,testing,development'
+            ]
+        ]);
+
+        Feature::bind('env', function ($user, array $enviroments) {
+            return ['local','testing','development'] === $enviroments;
+        });
+
+        $this->assertTrue(Feature::isEnabled('my_feature'));
+    } 
+
+    /** @test */
     public function it_checks_if_a_feature_is_enabled()
     {
         config([
