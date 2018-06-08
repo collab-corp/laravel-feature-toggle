@@ -104,7 +104,9 @@ To evaluate a feature toggle in your frontend, simply add ``` @features ``` to y
 This will add a ``` bool feature(value) ``` helper to your window.
 
 <a name="testing" />
+
 ## Testing
+
 ```php
 composer test
 ```
