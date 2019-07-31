@@ -16,6 +16,9 @@ class FeatureToggleServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../config/features.php' => config_path('features.php'),
         ]);
+        
+        Feature::registerBladeIfDirective();
+        Feature::registerJavaScriptBladeDirective();
     }
     /**
      * Register the application services.
@@ -24,7 +27,6 @@ class FeatureToggleServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Feature::registerBladeIfDirective();
-        Feature::registerJavaScriptBladeDirective();
+        //
     }
 }
