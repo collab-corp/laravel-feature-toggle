@@ -4,6 +4,7 @@ namespace CollabCorp\LaravelFeatureToggle;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
 
 class Feature
 {
@@ -124,7 +125,7 @@ EOT;
      */
     public static function all()
     {
-        return array_dot(config('features') ?? []);
+        return Arr::dot(config('features') ?? []);
     }
 
     /**
@@ -148,7 +149,7 @@ EOT;
                 list($value, $parameters) = static::expandParameterizedBinding($value, $parameters);
             }
 
-            $value = array_get(static::$evaluations, $value, $value);
+            $value = Arr::get(static::$evaluations, $value, $value);
         }
 
         return (bool)app()->call($value, $parameters);
